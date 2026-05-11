@@ -1,27 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="bootstrap\bootstrap5\css\bootstrap.css">
+    <title>Contact-AfriTalent</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
+    </style>
 </head>
+
 <body>
-    
+    <nav class="navbar navbar-expand-lg  fixed-top bg-white shadow-sm" id="mainNav">
+        <div class="container">
+             <a class="navbar-brand fw-bold" href="index.html">Afri<span class="text-primary">Talent</span></a>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link " href="freelances.html">Freelances</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">A
+                            propos</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <a href="#" class="btn btn-light ms-3 bg-primary">Rejoindre AfriTalent</a>
+                    <button class="btn btn-link nav-link" id="darkModeToggle"><i
+                            class="bi bi-moon-stars-fill"></i></button>
+                </ul>
+
+                <div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- titre -->
+    <section class="container py-5 mt-5">
+        <div class="row g-5">
+            <div class="col-lg-6 reveal">
+                <div class="p-4 p-md-5 bg-white rounded-4 shadow-sm border">
+                    <h2 class="fw-bold mb-4">Envoyez-nous un message</h2>
 
 
+                    <form id="contactForm" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Nom</label>
+                                <input type="text" class="form-control rounded-1 shadow-none" id="name"
+                                    placeholder="Votre Nom" required>
+                                <div class="invalid-feedback">Veuillez entrer un nom corret.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Prenom </label>
+                                <input type="text" class="form-control rounded-1 shadow-none" id="name"
+                                    placeholder="Votre Prenom" required>
+                                <div class="invalid-feedback">Veuillez entrer un prenom corret.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Email</label>
+                                <input type="email" class="form-control rounded-1 shadow-none" id="email"
+                                    placeholder="Votre email" required>
+                                <div class="invalid-feedback">Veuillez entrer un email valide.</div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold">Sujet</label>
+                                <select class="form-select rounded-1 shadow-none">
+                                    <option selected>Je cherche un talent</option>
+                                    <option>Je suis un freelance</option>
+                                    <option>Partenariat business</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold">Votre message</label>
+                                <textarea class="form-control rounded-1 shadow-none" id="message" rows="5"
+                                    placeholder="Dites-nous en plus sur votre besoin..." required></textarea>
+                                <div class="invalid-feedback">Votre message doit contenir au moins 20 caractères.</div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold shadow-sm">
+                                    <i class="bi bi-send-fill me-2"></i> Envoyer le message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
+                    <div id="formSuccess" class="alert alert-success d-none mt-4 rounded-3 border-0">
+                        <i class="bi bi-check-circle-fill me-2"></i> Votre message a été envoyé avec succès !
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-lg-6 reveal">
+                <div class="h-100 d-flex flex-column">
+                    <div class="mb-5">
+                        <h2 class="fw-bold mb-4">Nos coordonnées</h2>
+                        <div class="d-flex mb-4">
+                            <div class="bg-primary-subtle p-3 rounded-circle me-3">
+                                <i class="bi bi-geo-alt-fill text-primary fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Siège Social</h5>
+                                <p class="text-muted">Avenue Cheikh Anta Diop, Dakar, Sénégal</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="bg-primary-subtle p-3 rounded-circle me-3">
+                                <i class="bi bi-envelope-fill text-primary fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Email</h5>
+                                <p class="text-muted">contact@afritalent.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="bg-primary-subtle p-3 rounded-circle me-3">
+                                <i class="bi bi-telephone-fill text-primary fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Téléphone</h5>
+                                <p class="text-muted">+221 77 000 44 55</p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="flex-grow-1 rounded-4 overflow-hidden shadow-sm border" style="min-height: 300px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.221584282361!2d-17.4674681!3d14.6934076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172535f29d5b3%3A0xc665809786438676!2sDakar!5e0!3m2!1sfr!2ssn!4v1620000000000!5m2!1sfr!2ssn"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-3">
+                    <h3>AfriTalent</h3>
+                    <img src="image/logo.jpeg" alt="" width="60px" height="40px">
+                    <p class="text-secondary small pe-lg-5">
+                        La plateforme de référence pour connecter les entreprises internationales aux meilleurs talents
+                        technologiques du continent africain. Qualité, confiance et innovation.
+                    </p>
+                    <div class="d-flex gap-3 mt-3 mb-4">
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
+                                class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
+                                class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4>Navigation</h4>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="index.html" class="text-secondary text-decoration-none">Accueil</a>
+                        </li>
+                        <li class="mb-2"><a href="freelances.html"
+                                class="text-secondary text-decoration-none">Freelances</a></li>
+                        <li class="mb-2"><a href="tarifs.html" class="text-secondary text-decoration-none">Nos
+                                Tarifs</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-secondary text-decoration-none">À propos</a>
+                        </li>
+                        <li class="mb-2"><a href="contact.html" class="text-secondary text-decoration-none">Contact</a>
+                        </li>
+                    </ul>
 
+                </div>
+                <div class="col">
+                    <h3>Ressources</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Développement Web</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Design UI/UX</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Marketing Digital</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Data & IA</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Rédaction Tech</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">DevOps & Cloud</a></li>
+                    </ul>
+                </div>
+                <div class="col col-lg-3 text-lg-end">
+                    <h3>Contact</h3>
+                    <p class="text-secondary small"><i class="bi bi-telephone-fill text-primary fs-4"></i> +221 77 400
+                        00 11</p>
+                    <p class="text-secondary small "><i class="bi bi-geo-alt-fill text-primary me-2"></i> Dakar, Sénégal
+                    </p>
+                    <p class="text-secondary small "><i class="bi bi-envelope-fill text-primary me-2"></i>
+                        contact@AfriTalent.com</p>
+                </div>
+                <hr class="my-4 border-secondary">
+                <div>
+                    <p>2026 &copy;codding.all Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+        </footter>
 
-
-
-    <script 
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-></script> 
-<!-- Votre script JavaScript --> 
-<script src="js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Votre script JavaScript -->
+        <script src="js/main.js"></script>
 </body>
+
 </html>
