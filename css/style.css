@@ -1,0 +1,64 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+:root{
+   --primary: #5624d0;        
+   --accent: #cef53d;        
+   --dark-bg: #1c1d1f;
+   --light-bg: #f7f9fa;
+   --white: #ffffff;
+   --text-main: #2d2f31;
+   --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+body{
+   font-family: 'Roboto',sans-serif;
+   background-color: var(--light-color);
+   color: var(--text-color);
+   line-height: 1.6;
+   margin: 0;
+   overflow-x: hidden;
+}
+h1,h2,h3{
+   font-family:'Poppins',sans-serif;
+}
+p{
+   font-size: 16px;
+
+}
+html{
+   scroll-behavior: smooth;
+}
+/* .nav-link.active, .nav-link:hover {
+    color: var(--primary) !important;
+} */
+.section-padding { padding: 100px 0; }
+
+/* ==========================================================================
+   NAVBAR DYNAMIQUE
+   ========================================================================== */
+.navbar {
+    background-color: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 20px 0;
+    transition: var(--transition-smooth);
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.nav-link {
+    font-weight: 600;
+    color: var(--text-main) !important;
+}
+
+.nav-link.active, .nav-link:hover {
+    color: var(--primary) !important;
+}
