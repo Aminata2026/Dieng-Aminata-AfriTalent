@@ -27,6 +27,92 @@ html, body{
     overflow-x: hidden;
 }
 
+body.dark-mode {
+    background-color: #0b0b0b;
+    color: var(--white);
+}
+
+
+body.dark-mode .navbar, 
+body.dark-mode .bento-item, 
+body.dark-mode .card,
+body.dark-mode .accordion-item {
+    background-color: #1a1a1a;
+    border-color: #333;
+    color: var(--white);
+}
+/* Navbar en dark mode */
+body.dark-mode .navbar {
+    background-color: #121212 !important;
+}
+
+/* Liens normaux (PAS les boutons) */
+body.dark-mode .navbar .nav-link:not(.btn) {
+    color: #fff !important;
+}
+
+/* Bouton principal */
+body.dark-mode .btn-primary {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+/* Bouton toggle (lune/soleil) */
+body.dark-mode #darkModeToggle {
+    color: #fff !important;
+}
+
+body.dark-mode .bg-light { background-color: #121212 !important; }
+body.dark-mode .text-muted { color: #aaa !important; }
+body.dark-mode .nav-link { color: var(--white) !important; }
+
+/* ==============================================================
+La navbar qui change de style au scroll (fond, ombre, effet shrink)
+=================================================================
+*/
+/* Navbar normale */
+#mainNav {
+    transition: all 0.3s ease;
+    padding: 15px 0;
+}
+
+/* Navbar quand on scroll */
+#mainNav.scrolled {
+    background-color: #ffffff !important;
+    padding: 8px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Texte en mode scroll */
+#mainNav.scrolled .nav-link {
+    color: #000 !important;
+}
+
+/* Logo shrink */
+#mainNav.scrolled .navbar-brand {
+    font-size: 1.3rem;
+}
+
+body.dark-mode #mainNav.scrolled {
+    background-color: #121212 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+body.dark-mode #mainNav.scrolled .nav-link:not(.btn) {
+    color: #fff !important;
+}
+
+#mainNav {
+    background-color: gray;
+}
+
+
+
+
+
+
+
 h1,h2,h3{
    font-family:'Poppins',sans-serif;
 }
@@ -46,6 +132,7 @@ html{
 .section{
     position: relative;
 }
+
 /* ==========================================================================
    NAVBAR DYNAMIQUE
    ========================================================================== */
@@ -149,6 +236,7 @@ html{
     max-width: 1200px;
     margin: auto;
 }
+
 
 @media(max-width:375px){
     body{
