@@ -107,7 +107,18 @@ body.dark-mode #mainNav.scrolled .nav-link:not(.btn) {
     background-color: gray;
 }
 
+/* État initial (caché) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
 
+/* Quand visible */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 

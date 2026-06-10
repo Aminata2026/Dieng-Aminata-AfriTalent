@@ -39,4 +39,35 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+// compteur  
+
+    const counters = document.querySelectorAll('.counter');
+     const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = +entry.target.getAttribute('data-target');
+                    animateCounter(entry.target, target);
+                    counterObserver.unobserve(entry.target); // Animer une seule fois
+                }
+            });
+        }, { threshold: 0.8 });
+
+        counters.forEach(c => counterObserver.observe(c));
+
+        function animateCounter(element, target) {
+            let count = 0;
+            const speed = 2000; // Durée totale de l'animation en ms
+            const increment = target / (speed / 16); // 60fps
+
+            const update = () => {
+                count += increment;
+                if (count < target) {
+                    element.innerText = Math.ceil(count).toLocaleString();
+                    requestAnimationFrame(update);
+                } else {
+                    element.innerText = target.toLocaleString();
+                }
+            };
+            update();
+        }
 });
