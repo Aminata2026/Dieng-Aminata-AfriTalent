@@ -1,7 +1,7 @@
-
+/*--- Attendre que le document soit prêt ---*/
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- 1. DARK MODE AVEC LOCALSTORAGE --- */
+    /* ---  DARK MODE AVEC LOCALSTORAGE --- */
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 })
-
+/* --- NAVBAR DYNAMIQUE AU SCROLL --- */
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('mainNav');
 
@@ -30,7 +30,7 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
     }
 
-    /* --- 7. BOUTON RETOUR EN HAUT (Smooth Scroll) --- */
+    /* ---  BOUTON RETOUR EN HAUT (Smooth Scroll) --- */
     const btn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
         btn.style.display = window.scrollY > 500 ? 'block' : 'none';
@@ -40,7 +40,7 @@ window.addEventListener('scroll', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // compteur  
+    /*--- compteur ---*/
 
     const counters = document.querySelectorAll('.counter');
     const counterObserver = new IntersectionObserver((entries) => {
@@ -74,14 +74,14 @@ window.addEventListener('scroll', () => {
 });
 
 
-
+/* --- 4. FILTRAGE DYNAMIQUE (freelances.html) --- */
 const filterButtons = document.querySelectorAll(".filter-btn");
 const cards = document.querySelectorAll(".freelance-card");
 
 filterButtons.forEach(button => {
     button.addEventListener("click", () => {
 
-        // 🔥 active button style
+        //  active button style
         filterButtons.forEach(btn => btn.classList.remove("active"));
         button.classList.add("active");
 
@@ -100,22 +100,22 @@ filterButtons.forEach(button => {
     });
 });
 
-
-
+/*--- modal ---*/ 
+/*--- Attendre que le document soit prêt ---*/
 document.addEventListener("DOMContentLoaded", function () {
 
     const modal = document.getElementById("profileModal");
 
     if (modal) {
         modal.addEventListener("show.bs.modal", function (event) {
-
+            // Le bouton qui a déclenché la modale
             const button = event.relatedTarget;
-
+            // Extraire les infos des attributs data-
             const name = button.getAttribute("data-name");
             const job = button.getAttribute("data-job");
             const price = button.getAttribute("data-price");
             const desc = button.getAttribute("data-desc");
-
+             // Mettre à jour le contenu de la modale
             document.getElementById("modalName").innerText = name;
             document.getElementById("modalJob").innerText = job;
             document.getElementById("modalPrice").innerText = price;
@@ -127,9 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 /* --- 6. VALIDATION DE FORMULAIRE (contact.html) --- */
-//    
+/*--- Attendre que le document soit prêt ---*/ 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById('contactform');
 
@@ -143,12 +142,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let isValid = true;
 
-        const name = document.getElementById('name'); // ⚠️ nom et pas name
+        const name = document.getElementById('name');
         const email = document.getElementById('email');
         const message = document.getElementById('message');
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+        // Simple validation visuelle
         const validate = (el, condition) => {
             if (condition) {
                 el.classList.remove('is-invalid');
@@ -169,6 +168,8 @@ document.addEventListener("DOMContentLoaded", function () {
             form.reset();
         }
     });
+
+
 });
 
 
