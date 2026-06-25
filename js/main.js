@@ -1,4 +1,3 @@
-/*--- Attendre que le document soit prêt ---*/
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ---  DARK MODE AVEC LOCALSTORAGE --- */
@@ -29,6 +28,21 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('scrolled');
     }
+
+    // Animation fade-in
+    const sections = document.querySelectorAll(".fade-in");
+    const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
 
     /* ---  BOUTON RETOUR EN HAUT (Smooth Scroll) --- */
     const btn = document.getElementById('backToTop');
@@ -100,7 +114,7 @@ filterButtons.forEach(button => {
     });
 });
 
-/*--- modal ---*/ 
+/*--- modal ---*/
 /*--- Attendre que le document soit prêt ---*/
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -115,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const job = button.getAttribute("data-job");
             const price = button.getAttribute("data-price");
             const desc = button.getAttribute("data-desc");
-             // Mettre à jour le contenu de la modale
+            // Mettre à jour le contenu de la modale
             document.getElementById("modalName").innerText = name;
             document.getElementById("modalJob").innerText = job;
             document.getElementById("modalPrice").innerText = price;
@@ -128,24 +142,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* --- 6. VALIDATION DE FORMULAIRE (contact.html) --- */
-/*--- Attendre que le document soit prêt ---*/ 
+/*--- Attendre que le document soit prêt ---*/
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById('contactform');
-
     if (!form) {
         console.error("Formulaire introuvable !");
         return;
     }
-
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-
         let isValid = true;
-
         const name = document.getElementById('name');
         const email = document.getElementById('email');
         const message = document.getElementById('message');
-
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         // Simple validation visuelle
         const validate = (el, condition) => {
@@ -158,18 +167,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 isValid = false;
             }
         };
-
         validate(name, name.value.trim().length > 2);
         validate(email, emailRegex.test(email.value));
         validate(message, message.value.trim().length >= 20);
-
         if (isValid) {
             document.getElementById('formSuccess').classList.remove('d-none');
             form.reset();
         }
     });
-
-
 });
 
 

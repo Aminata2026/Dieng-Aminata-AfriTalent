@@ -1,46 +1,59 @@
-*{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-}
-:root{
-   --primary: #5624d0;        
-   --accent: #cef53d;        
-   --dark-bg: #1c1d1f;
-   --light-bg: #f7f9fa;
-   --white: #ffffff;
-   --text-main: #2d2f31;
-   --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-body{
-   font-family: 'Roboto',sans-serif;
-   background-color: var(--light-bg);
-   color: var(--text-main);
-   line-height: 1.6;
-   margin: 0;
-   overflow-x: hidden;
+/* ==========================================================================
+   VARIABLES & CONFIGURATION (Min. 6 variables)
+   ========================================================================== */
+
+:root {
+    --primary: #5624d0;
+    --accent: #cef53d;
+    --dark-bg: #1c1d1f;
+    --light-bg: #f7f9fa;
+    --white: #ffffff;
+    --text-main: #2d2f31;
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-html, body{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
     overflow-x: hidden;
 }
 
+.img {
+    box-shadow: #6f7376;
+    width: 70%;
+    height: 20%;
+    border-radius: 5%;
+
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   DARK MODE (Toggle)
+   ========================================================================== */
 body.dark-mode {
     background-color: #0b0b0b;
     color: var(--white);
 }
 
-
-body.dark-mode .navbar, 
-body.dark-mode .bento-item, 
+body.dark-mode .navbar,
+body.dark-mode .bento-item,
 body.dark-mode .card,
 body.dark-mode .accordion-item {
     background-color: #1a1a1a;
     border-color: #333;
     color: var(--white);
 }
+
 /* Navbar en dark mode */
 body.dark-mode .navbar {
     background-color: #121212 !important;
@@ -63,9 +76,17 @@ body.dark-mode #darkModeToggle {
     color: #fff !important;
 }
 
-body.dark-mode .bg-light { background-color: #121212 !important; }
-body.dark-mode .text-muted { color: #aaa !important; }
-body.dark-mode .nav-link { color: var(--white) !important; }
+body.dark-mode .bg-light {
+    background-color: #121212 !important;
+}
+
+body.dark-mode .text-muted {
+    color: #aaa !important;
+}
+
+body.dark-mode .nav-link {
+    color: var(--white) !important;
+}
 
 /* ==============================================================
 La navbar qui change de style au scroll (fond, ombre, effet shrink)
@@ -79,9 +100,9 @@ La navbar qui change de style au scroll (fond, ombre, effet shrink)
 
 /* Navbar quand on scroll */
 #mainNav.scrolled {
-    background-color: #ffffff !important;
+    background-color: #b2b3b3 !important;
     padding: 8px 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Texte en mode scroll */
@@ -96,7 +117,7 @@ La navbar qui change de style au scroll (fond, ombre, effet shrink)
 
 body.dark-mode #mainNav.scrolled {
     background-color: #121212 !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 body.dark-mode #mainNav.scrolled .nav-link:not(.btn) {
@@ -107,10 +128,13 @@ body.dark-mode #mainNav.scrolled .nav-link:not(.btn) {
     background-color: gray;
 }
 
+/* ==========================================================================
+   ANIMATIONS & ACCESSIBILITÉ
+   ========================================================================== */
 /* État initial (caché) */
 .fade-in {
-    opacity: 0;
-    transform: translateY(40px);
+    opacity: 1;
+    transform: translateY(60px);
     transition: all 0.8s ease;
 }
 
@@ -119,42 +143,55 @@ body.dark-mode #mainNav.scrolled .nav-link:not(.btn) {
     opacity: 1;
     transform: translateY(0);
 }
-/* /validation */
-.error { 
-color: red; 
-font-size: 0.9em;
+
+/*=========================================================
+ validation
+ ========================================================== */
+.error {
+    color: red;
+    font-size: 0.9em;
 }
-.success { 
-color: green; 
-font-size: 1.1em; 
- }  
- /* #backToTop{
-    background: #000;
- } */
 
-
-
-
-
-
-h1,h2,h3{
-   font-family:'Poppins',sans-serif;
+.success {
+    color: green;
+    font-size: 1.1em;
 }
-p{
-   font-size: 16px;
+
+/*===================================================
+  section 
+  ====================================================*/
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    font-size: 16px;
 
 }
-html{
-   scroll-behavior: smooth;
+
+html {
+    scroll-behavior: smooth;
 }
-/* .nav-link.active, .nav-link:hover {
-    color: var(--primary) !important;
-} */
-.section-padding { 
-    padding: 100px 0; 
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
 }
-.section{
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.section {
     position: relative;
+}
+
+.hero-section {
+    align-items: center;
+
 }
 
 /* ==========================================================================
@@ -162,7 +199,7 @@ html{
    ========================================================================== */
 .navbar {
     background-color: var(--white);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 20px 0;
     transition: var(--transition-smooth);
 }
@@ -171,7 +208,7 @@ html{
     padding: 10px 0;
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .nav-link {
@@ -179,124 +216,136 @@ html{
     color: var(--text-main) !important;
 }
 
-.nav-link.active, .nav-link:hover {
+.nav-link.active,
+.nav-link:hover {
     color: var(--primary) !important;
 }
 
-
-
-
-.hero-section{
-   padding: 60px 0;
+.navbar {
+    padding: 1rem;
+    transition: all 0.3s ease;
 }
 
+
+
+/* ==========================================================================
+   BENTO GRID (Design 2026)
+   ========================================================================== */
 .bento-grid {
+    justify-content: center;
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    position: relative;
+    overflow: hidden;
+    padding: 50px;
+    /* align-items: center; */
+    /* padding: 100px;
+    width: 20px; */
 }
 
 .bento-item {
     background: var(--white);
-    padding: 40px;
+    padding: 50px;
     border-radius: 24px;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
 }
+
 .bento-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
+/* ==========================================================================
+   CARDS & HOVER EFFECTS
+   ========================================================================== */
 
 .card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
 .carousel-item {
-  text-align: center;
-  padding: 40px;
-  
+    text-align: center;
+    padding: 40px;
+
 }
 
 .carousel-item img {
-  width: 150px;
-  height: 150px;
+    width: 150px;
+    height: 150px;
 }
 
-@media(min-width:768px){
-  .carousel-item img {
-    width: 250px;
-    height: 250px;
-  }
-}
-.img{
-    box-shadow: #6f7376;
-    width: 70%;
-    border-radius: 10%;
-}
-
-.CTA{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   padding: 40px;
-   text-align: center;
-}
-
-.container{
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-
-@media(max-width:375px){
-    body{
-        font-size:14px ;
+/*===========================================================
+ Responsive 
+ ============================================================*/
+@media(min-width:768px) {
+    .carousel-item img {
+        width: 250px;
+        height: 250px;
     }
-    .hero{
-        flex-direction: column;
-    }
-    .navbar{
-        flex-direction: column;
-    }
-    .card{
-        margin-bottom: 15px;
-    #ggg{
+}
+
+@media(max-width:375px) {
+    body {
         font-size: 14px;
     }
-}
-}
 
-@media(max-width:768px){
-    .hero{
+    .hero {
         flex-direction: column;
     }
-    .bento-grid{
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .card {
+        margin-bottom: 15px;
+
+        #ggg {
+            font-size: 14px;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .bento-grid {
         display: grid;
-        grid-template-columns:1fr 1fr ;
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
     }
 }
-@media(min-width:1200px){
-    .bento-grid{
-        grid-template-columns: repeat(3, 1fr );
+
+@media(min-width:1200px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-.navbar{
-    padding: 1rem;
-    transition: all 0.3s ease;
+
+.CTA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(to right, #4d4d4e, #e4e4e7);
 }
